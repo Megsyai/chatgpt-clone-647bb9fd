@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova | Advanced Intelligence Interface</title>
+    <meta name="description" content="The next generation of conversational AI, wrapped in a precision-engineered liquid chrome interface." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Inter Tight', 'sans-serif'],
+            },
+            colors: {
+              chrome: {
+                bg: '#000000',
+                surface: 'rgba(255,255,255,0.04)',
+                fg: '#ffffff',
+                muted: 'rgba(255,255,255,0.6)',
+                primary: '#ffffff',
+                accent: '#a3a3a3',
+                ring: 'rgba(255,255,255,0.12)',
+              }
+            },
+            backgroundImage: {
+              'chrome-gradient': 'linear-gradient(to right, #A3A3A3, #FFFFFF, #A3A3A3)',
+              'glass-surface': 'linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)',
+            },
+            boxShadow: {
+              'glass': '0 30px 80px -40px rgba(0,0,0,0.8), inset 0 1px 0 0 rgba(255,255,255,0.15)',
+              'glass-hover': '0 40px 100px -40px rgba(0,0,0,0.9), inset 0 1px 0 0 rgba(255,255,255,0.25)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #000000;
+        color: #ffffff;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      .noise-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+
+      /* Custom Scrollbar for App */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      
+      .text-balance {
+        text-wrap: balance;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise-overlay"></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
